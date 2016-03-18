@@ -1,0 +1,28 @@
+.chatContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80% !important;
+  height: 80%;
+  border: 1px #eee solid !important;
+  overflow: auto;
+}
+.msgContainer h1 {
+  margin-top: 0px;
+  text-align: center;
+}
+.msgContainer {
+  background-color: #eee;
+  text-align: left;
+  overflow: auto;
+  height: 90%;
+}
+.submitForm {
+  position: absolute;
+  bottom: 0;
+  width: 98%;
+}
+.chatInput {
+  margin-bottom: 0px !important;
+}

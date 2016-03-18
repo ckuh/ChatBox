@@ -1,0 +1,27 @@
+<div ng-controller='HomeController as homeController' ng-cloak>
+
+  <div class='container username' layout-padding>
+    <div class="">
+
+      <form name='saveUserName' class='md-primary' ng-submit='saveUserName.$valid && homeController.saveUserName()' novalidate>
+
+        <md-input-container class='md-block'>
+          <label class='md-display-1'>Username</label>
+          <input name='username' type='text' ng-model='homeController.user.username' minlength='5' required>
+          <div ng-messages="saveUserName.username.$error" ng-show="saveUserName.username.$touched">
+            <div ng-message="required">This is required!</div>
+            <div ng-message="minlength">Username is to short!</div>
+          </div>
+        </md-input-container>
+
+        <div>
+          <md-button class="md-primary md-raised" ng-disabled="saveUserName.$invalid">SUBMIT</md-button>
+          <md-button class='md-primary md-raised' ng-click="homeController.reset()">RESET</md-button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</div>

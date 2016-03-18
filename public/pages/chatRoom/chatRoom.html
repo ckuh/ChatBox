@@ -1,0 +1,23 @@
+<div ng-controller='ChatRoomController as chatRoomController' ng-cloak>
+
+  <div class='container-fluid chatContainer' layout-padding>
+
+    <div class='container-fluid msgContainer' id='scrollTop'>
+      <h1 class='md-display-2'>
+        Welcome {{chatRoomController.user.username}}!
+        <!-- <br> There {{chatRoomController.plural.verb}} {{chatRoomController.user.userCount}} {{chatRoomController.plural.noun}}. -->
+      </h1>
+      <div class='' ng-repeat="text in chatRoomController.chatLog track by $index" my-repeat-directive>
+        {{text.user}}: {{text.msg}}
+      </div>
+    </div>
+
+    <form name='sendUserInput' class='md-primary submitForm' ng-submit='sendUserInput.$valid && chatRoomController.sendUserInput()' novalidate>
+      <md-input-container class='md-block chatInput'>
+        <label></label>
+        <input name='msg' type='text' ng-model='chatRoomController.user.msg' required md-maxlength='150'>
+      </md-input-container>
+    </form>
+  </div>
+
+</div>
