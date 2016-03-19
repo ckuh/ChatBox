@@ -15,7 +15,7 @@
         </md-input-container>
 
         <div>
-          <md-button class="md-primary md-raised" ng-disabled="saveUserName.$invalid">SUBMIT</md-button>
+          <md-button class="md-primary md-raised" ng-click='saveUserName.$valid && homeController.saveUserName()'  ng-disabled="saveUserName.$invalid">SUBMIT</md-button>
           <md-button class='md-primary md-raised' ng-click="homeController.reset()">RESET</md-button>
         </div>
 
