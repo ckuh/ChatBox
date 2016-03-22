@@ -1,7 +1,8 @@
 .chatContainer {
+  /*border: 1px #eee solid !important;*/
   width: 80% !important;
   height: 100%;
-  border: 1px #eee solid !important;
+  padding: 0 !important;
 }
 .chatRoomContainer {
   height: 100%;
@@ -11,15 +12,33 @@
   text-align: center;
 }
 .msgContainer {
-  background-color: #eee;
+  color: #8c8c8c;
+  background-color: #201F26;
   text-align: left;
   overflow: auto;
-  height: 90%;
+  height: 85%;
 }
 .submitForm {
-  height: 10% !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  height: 15% !important;
+  background-color: #32323e;
+}
+.submitForm form {
+  height: 100%;
+}
+.submitForm textarea {
+  color: #8c8c8c;
+  overflow: auto;
 }
 .chatInput {
+  height: 100%;
   margin-top: 0 !important;
   margin-bottom: 0px !important;
+}
+
+@media (min-width: 400px) {
+  .submitForm textarea {
+    height: 80% !important;
+  }
 }

@@ -1,8 +1,8 @@
 <div class='controller' layout='row' ng-controller='ChatRoomController as chatRoomController' ng-cloak>
 
-  <div class='container-fluid chatRoomContainer'>
+  <!-- <div class='container-fluid chatRoomContainer'>
     <label class='md-headline'>Chat Rooms</label>
-  </div>
+  </div> -->
 
   <div class='container-fluid chatContainer' layout-padding>
 
@@ -18,13 +18,15 @@
       </div>
     </div>
 
-    <form name='sendUserInput' class='md-primary submitForm' novalidate>
-      <md-input-container class='md-block chatInput'>
-        <label></label>
-        <!-- <input name='msg' type='text' ng-model='chatRoomController.user.msg' required md-maxlength='150' ng-submit='sendUserInput.$valid && chatRoomController.sendUserInput()'> -->
-        <textarea name='msg' type='text' ng-model='chatRoomController.user.msg' required md-maxlength='150' md-no-autogrow='false'  ng-enter='sendUserInput.$valid && chatRoomController.sendUserInput()'></textarea>
-      </md-input-container>
-    </form>
+    <div class="submitForm">
+      <form name='sendUserInput' class='md-primary' novalidate>
+        <md-input-container class='md-block chatInput'>
+          <label></label>
+          <!-- <input name='msg' type='text' ng-model='chatRoomController.user.msg' required md-maxlength='150' ng-submit='sendUserInput.$valid && chatRoomController.sendUserInput()'> -->
+          <textarea name='msg' type='text' ng-model='chatRoomController.user.msg' required md-maxlength='150' md-no-autogrow='false'  ng-enter='sendUserInput.$valid && chatRoomController.sendUserInput()' md-select-on-focus placeholder="Send a message!"></textarea>
+        </md-input-container>
+      </form>
+    </div>
 
   </div>
 
