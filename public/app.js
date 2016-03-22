@@ -48,22 +48,22 @@ angular.module('App', [
     });
 
     $mdThemingProvider.theme('default')
-    .primaryPalette('indigo')
+      .primaryPalette('indigo')
 
   })
+  .run(function($rootScope, $state, $localStorage) {
+    $rootScope.$on('$stateChangeStart', function(e, to) {
+      if (!to.authenticate) {
+        return;
+      };
+      e.preventDefault();
 
-.run(function($rootScope, $state, $localStorage) {
-  $rootScope.$on('$stateChangeStart', function(e, to) {
-    if (!to.authenticate) {
-      return;
-    };
-    e.preventDefault();
-
-    if ($localStorage.username) {
-      to.authenticate = false;
-      $state.go(to.name);
-    } else {
-      $state.go('home');
-    }
-  });
-})
+      if ($localStorage.username) {
+        to.authenticate = false;
+        $state.go(to.name);
+      } else {
+        $state.go('home');
+      }
+    });
+  })
+  

@@ -18,10 +18,11 @@
       </div>
     </div>
 
-    <form name='sendUserInput' class='md-primary submitForm' ng-submit='sendUserInput.$valid && chatRoomController.sendUserInput()' novalidate>
+    <form name='sendUserInput' class='md-primary submitForm' novalidate>
       <md-input-container class='md-block chatInput'>
         <label></label>
-        <input name='msg' type='text' ng-model='chatRoomController.user.msg' required md-maxlength='150'>
+        <!-- <input name='msg' type='text' ng-model='chatRoomController.user.msg' required md-maxlength='150' ng-submit='sendUserInput.$valid && chatRoomController.sendUserInput()'> -->
+        <textarea name='msg' type='text' ng-model='chatRoomController.user.msg' required md-maxlength='150' md-no-autogrow='false'  ng-enter='sendUserInput.$valid && chatRoomController.sendUserInput()'></textarea>
       </md-input-container>
     </form>
 
